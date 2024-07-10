@@ -37,7 +37,7 @@ return {
 					{ name = "luasnip" }, -- For luasnip users.
 				}, {
 					{ name = "buffer" },
-				}),
+ 				}),
 			})
 		end,
 	},
