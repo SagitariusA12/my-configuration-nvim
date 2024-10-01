@@ -2,6 +2,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+
+-- Delete keypress Ctrl
+vim.api.nvim_set_keymap('i', '<C-BS>', '<C-W>', { noremap = true })
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -20,6 +24,6 @@ vim.g.maplocalleader = "\\"
 require("vim-options")
 require("lazy").setup({
   import = "plugins",
---  install = { colorscheme = { "catppuccin" } },
+  install = { colorscheme = { "catppuccin" } },
   checker = { enabled = true },
 })

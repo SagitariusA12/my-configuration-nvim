@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "tsserver", "pyright", "html", "cssls", "clangd", "jsonls", "typos_lsp"},
+                ensure_installed = { "lua_ls", "ts_ls", "pyright", "html", "cssls", "clangd", "jsonls", "typos_lsp"},
             })
         end,
     },
@@ -20,7 +20,7 @@ return {
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
             local lspconfig = require("lspconfig")
-            lspconfig.tsserver.setup({
+            lspconfig.ts_ls.setup({
                 capabilities = capabilities,
             })
             lspconfig.html.setup({
