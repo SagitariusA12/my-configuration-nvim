@@ -3,6 +3,10 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.termguicolors = true
+vim.opt.virtualedit = "onemore"
+vim.opt.clipboard = "unnamedplus"
+
 
 -- Open terminal
 vim.keymap.set("n", "<C-t>", ":rightbelow vsplit | term<CR>:startinsert<CR>", { noremap = true, silent = true })
