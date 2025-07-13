@@ -1,0 +1,37 @@
+
+
+s  <Tab>       * <Lua 28: vim/_defaults.lua:0>
+                 vim.snippet.jump if active, otherwise <Tab>
+n  <Space><Space> * <Lua 263: ~/.local/share/nvim/lazy/telescope.nvim/lua/telescope/builtin/init.lua:502>
+n  <Space>fh   * <Lua 261: ~/.local/share/nvim/lazy/telescope.nvim/lua/telescope/builtin/init.lua:502>
+n  <Space>fb   * <Lua 260: ~/.local/share/nvim/lazy/telescope.nvim/lua/telescope/builtin/init.lua:502>
+n  <Space>fg   * <Lua 259: ~/.local/share/nvim/lazy/telescope.nvim/lua/telescope/builtin/init.lua:502>
+n  <Space>ff   * <Lua 258: ~/.local/share/nvim/lazy/telescope.nvim/lua/telescope/builtin/init.lua:502>
+n  <Space>gf   * <Lua 229: /usr/local/share/nvim/runtime/lua/vim/lsp/buf.lua:549>
+n  <Space>dt   * <Lua 234: ~/.local/share/nvim/lazy/nvim-dap/lua/dap.lua:1008>
+n  <Space>ca   * <Lua 31: /usr/local/share/nvim/runtime/lua/vim/diagnostic.lua:2544>
+n  <Space>e    * <Lua 185: /usr/local/share/nvim/runtime/lua/vim/diagnostic.lua:2197>
+n  <Space>rn   * <Lua 183: /usr/local/share/nvim/runtime/lua/vim/lsp/buf.lua:655>
+n  <Space>D    * <Lua 182: /usr/local/share/nvim/runtime/lua/vim/lsp/buf.lua:291>
+n  <Space>wl   * <Lua 181: ~/.config/nvim/lua/plugins/lsp-config.lua:53>
+n  <Space>wr   * <Lua 180: /usr/local/share/nvim/runtime/lua/vim/lsp/buf.lua:996>
+n  <Space>wa   * <Lua 179: /usr/local/share/nvim/runtime/lua/vim/lsp/buf.lua:973>
+x  #           * <Lua 9: vim/_defaults.lua:0>
+                 :help v_#-default
+o  %             <Plug>(MatchitOperationForward)
+x  %             <Plug>(MatchitVisualForward)
+n  %             <Plug>(MatchitNormalForward)
+n  &           * :&&<CR>
+                 :help &-default
+x  *           * <Lua 4: vim/_defaults.lua:0>
+                 :help v_star-default
+n  ;           * :
+n  <C-<Esc>>   * :Neotree close<CR>
+x  @           * mode() ==# 'V' ? ':normal! @'.getcharstr().'<CR>' : '@'
+                 :help v_@-default
+n  K           * <Lua 176: /usr/local/share/nvim/runtime/lua/vim/lsp/buf.lua:49>
+x  Q           * mode() ==# 'V' ? ':normal! @<C-R>=reg_recorded()<CR><CR>' : 'Q'
+                 :help v_Q-default
+n  Y           * y$
+                 :help Y-default
+
