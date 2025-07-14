@@ -19,16 +19,16 @@ local function save_and_close_or_quit()
   if bufname ~= "" and bufname ~= nil then
     -- Se for um arquivo, salva e fecha
     vim.cmd("w")
-    -- Verifica se é a última janela
-    local windows = vim.api.nvim_list_wins()
-    if #windows == 1 then
-      vim.cmd("qa")
-    else
-      vim.cmd("q")
-    end
-  else
-    -- Caso contrário, apenas fecha a janela
-    vim.cmd("q")
+  --   -- Verifica se é a última janela
+  --   local windows = vim.api.nvim_list_wins()
+  --   if #windows == 1 then
+  --     vim.cmd("qa")
+  --   else
+  --     vim.cmd("q")
+  --   end
+  -- else
+  --   -- Caso contrário, apenas fecha a janela
+  --   vim.cmd("q")
   end
 end
 

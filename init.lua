@@ -1,6 +1,5 @@
 require("keymaps")
 
-
 -- Configure leaders
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
