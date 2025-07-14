@@ -12,6 +12,10 @@ vim.opt.clipboard = "unnamedplus"
 vim.keymap.set("n", "<C-t>", ":rightbelow vsplit | term<CR>:startinsert<CR>", { noremap = true, silent = true })
 
 
+-- Mapeamento para Prettier
+vim.keymap.set("n", "<leader>fp", ":!prettier --write %<CR>", { desc = "Formatar com Prettier" })
+
+
 -- Função para salvar e fechar o buffer atual se for um arquivo, ou apenas fechar a janela
 local function save_and_close_or_quit()
   -- Verifica se o buffer atual é um arquivo

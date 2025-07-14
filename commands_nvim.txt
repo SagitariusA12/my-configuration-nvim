@@ -1,0 +1,23 @@
+| Tecla            | Ação                              |
+| ---------------- | --------------------------------- |
+| `<leader>th`     | Abrir terminal horizontal         |
+| `<leader>tv`     | Abrir terminal vertical           |
+| `<leader>tf`     | Abrir terminal flutuante          |
+| `<leader>tt`     | Abrir terminal em aba             |
+| `<leader>ta`     | Fechar **todos os terminais**     |
+| `<leader>ls`     | Iniciar `live-server`             |
+| `<leader>tn`     | Abrir terminal Node.js            |
+| `<leader>ht`     | Abrir `htop` (monitor de sistema) |
+| `<Esc>` (modo t) | Voltar ao modo normal do Neovim   |
+
+
+
+| Delimitador | Dentro (`di`) | Ao redor (`da`) |
+| ----------- | ------------- | --------------- |
+| `()`        | `di(`         | `da(`           |
+| `{}`        | `di{`         | `da{`           |
+| `[]`        | `di[`         | `da[`           |
+| `<>`        | `di<`         | `da<`           |
+| `""`        | `di"`         | `da"`           |
+| `''`        | `di'`         | `da'`           |
+
