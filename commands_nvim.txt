@@ -21,3 +21,11 @@
 | `""`        | `di"`         | `da"`           |
 | `''`        | `di'`         | `da'`           |
 
+
+| Ação                          | Atalho                        |
+| ----------------------------- | ----------------------------- |
+| Selecionar próxima ocorrência | `Ctrl-n`                      |
+| Selecionar acima/abaixo       | `Ctrl-Up/Down`                |
+| Entrar no modo múltiplos      | `Ctrl-n` em texto selecionado |
+| Cancelar todos                | `Esc Esc`                     |
+

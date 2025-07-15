@@ -26,3 +26,9 @@ map("n", "<leader>=", ":resize +5<CR>", opts)  -- Aumentar altura
 map("n", "<leader>-", ":resize -5<CR>", opts)  -- Diminuir altura
 map("n", "<leader>>", ":vertical resize +5<CR>", opts)  -- Aumentar largura
 map("n", "<leader><", ":vertical resize -5<CR>", opts)  -- Diminuir largura
+
+-- Prettier
+vim.keymap.set("n", "<leader>fp", function()
+  vim.lsp.buf.format({ async = true })
+end, { desc = "Format buffer with LSP" })
+
