@@ -16,7 +16,7 @@ return {
 					"cssls",
 					"clangd",
 					"jsonls",
-					"black",
+					"pyrhiht",
 				},
 				automatic_installation = true,
 			})
