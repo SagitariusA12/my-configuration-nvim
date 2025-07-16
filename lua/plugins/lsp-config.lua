@@ -32,7 +32,7 @@ return {
 			local servers = {
 				lua_ls = {},
 				ts_ls = {},
-				black = {},
+				pyright = {},
 				html = {},
 				cssls = {},
 				clangd = {},
