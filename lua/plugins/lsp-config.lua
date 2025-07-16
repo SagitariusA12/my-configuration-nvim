@@ -16,7 +16,7 @@ return {
 					"cssls",
 					"clangd",
 					"jsonls",
-					"pyrhiht",
+					"pyright",
 				},
 				automatic_installation = true,
 			})
