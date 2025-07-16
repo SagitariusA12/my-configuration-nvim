@@ -1,39 +1,39 @@
 return {
-  "nvimtools/none-ls.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
-  event = { "BufReadPre", "BufNewFile" },
-  config = function()
-    local null_ls = require("null-ls")
+	"nvimtools/none-ls.nvim",
+	dependencies = { "nvim-lua/plenary.nvim" },
+	event = { "BufReadPre", "BufNewFile" },
+	config = function()
+		local null_ls = require("null-ls")
+		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-    null_ls.setup({
-      sources = {
-        -- Formatadores
-        null_ls.builtins.formatting.stylua, -- Lua
-        null_ls.builtins.formatting.prettier.with({
-          filetypes = {
-            "javascript",
-            "typescript",
-            "html",
-            "css",
-            "json",
-            "yaml",
-            "markdown",
-          },
-        }),
-      },
-
-      -- Auto format ao salvar
-      on_attach = function(client, bufnr)
-        if client.supports_method("textDocument/formatting") then
-          vim.api.nvim_clear_autocmds({ group = 0, buffer = bufnr })
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            callback = function()
-              vim.lsp.buf.format({ async = false })
-            end,
-          })
-        end
-      end,
-    })
-  end,
+		null_ls.setup({
+			sources = {
+				null_ls.builtins.formatting.black,
+				null_ls.builtins.formatting.stylua,
+				null_ls.builtins.formatting.prettier.with({
+					filetypes = {
+						"javascript",
+						"typescript",
+						"html",
+						"css",
+						"json",
+						"yaml",
+						"markdown",
+					},
+				}),
+			},
+			on_attach = function(client, bufnr)
+				if client.supports_method("textDocument/formatting") then
+					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							vim.lsp.buf.format({ bufnr = bufnr, async = false })
+						end,
+					})
+				end
+			end,
+		})
+	end,
 }
