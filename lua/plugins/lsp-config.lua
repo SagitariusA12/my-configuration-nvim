@@ -17,6 +17,7 @@ return {
 					"clangd",
 					"jsonls",
 					"pyright",
+					"bashls",
 				},
 				automatic_installation = true,
 			})
@@ -37,6 +38,7 @@ return {
 				cssls = {},
 				clangd = {},
 				jsonls = {},
+				bashls = {},
 			}
 
 			for name, config in pairs(servers) do
