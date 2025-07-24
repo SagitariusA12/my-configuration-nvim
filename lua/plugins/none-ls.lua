@@ -53,7 +53,7 @@ return {
 		})
 
 		-- Mapeamento para formatação manual
-		vim.keymap.set("n", "<leader>fl", function()
+		vim.keymap.set("n", "<leader>gl", function()
 			if vim.fn.bufname() ~= "" and vim.bo.buftype == "" then
 				vim.lsp.buf.format({ async = false })
 			else
