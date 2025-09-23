@@ -32,6 +32,7 @@ return {
 						"typescriptreact",
 					},
 				}),
+				null_ls.builtins.formatting.black, -- ✅ Adicionado para Python
 			},
 			-- Formatação automática ao salvar
 			on_attach = function(client, bufnr)
