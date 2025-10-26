@@ -26,7 +26,7 @@ require("vim-options")
 require("lazy").setup({
 	import = "plugins",
 	install = {
-		colorscheme = { "oxocarbon" },
+		colorscheme = { "cyberdream" },
 	},
 	checker = {
 		enabled = false,
@@ -35,3 +35,6 @@ require("lazy").setup({
 		import = "plugins",
 	} },
 })
+
+-- Aplica o Cyberdream no final
+vim.cmd.colorscheme("cyberdream")
