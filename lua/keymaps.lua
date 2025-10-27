@@ -31,3 +31,4 @@ map("n", "<leader><", ":vertical resize -5<CR>", opts) -- Diminuir largura
 vim.keymap.set("n", "<leader>fp", function()
 	vim.lsp.buf.format({ async = true })
 end, { desc = "Format buffer with LSP" })
+
