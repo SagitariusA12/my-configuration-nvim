@@ -4,15 +4,18 @@ return {
 		"nvimtools/none-ls-extras.nvim",
 		"nvim-lua/plenary.nvim",
 	},
-	event = { "BufReadPre", "BufNewFile" }, -- Carrega apenas em buffers com arquivos
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local null_ls = require("null-ls")
 
 		null_ls.setup({
 			sources = {
-				null_ls.builtins.formatting.stylua, -- Formatação para Lua
+				-- ✅ Lua
+				null_ls.builtins.formatting.stylua,
+
+				-- ✅ HTML, CSS, JS, TS...
 				null_ls.builtins.formatting.prettier.with({
-					filetypes = { -- Tipos de arquivo para prettier
+					filetypes = {
 						"javascript",
 						"javascriptreact",
 						"typescript",
@@ -24,17 +27,28 @@ return {
 						"markdown",
 					},
 				}),
+
+				-- ✅ Python
+				null_ls.builtins.formatting.black,
+
+				-- ✅ Django Templates (HTML + {% %} + {{ }})
+				null_ls.builtins.formatting.djlint.with({
+					filetypes = { "html", "django", "htmldjango" },
+					extra_args = { "--profile=django", "--indent=4" },
+				}),
+
+				-- ✅ Lint: ESLint
 				require("none-ls.diagnostics.eslint_d").with({
-					filetypes = { -- Tipos de arquivo para eslint_d
+					filetypes = {
 						"javascript",
 						"javascriptreact",
 						"typescript",
 						"typescriptreact",
 					},
 				}),
-				null_ls.builtins.formatting.black, -- ✅ Adicionado para Python
 			},
-			-- Formatação automática ao salvar
+
+			-- ✅ Formatar ao salvar
 			on_attach = function(client, bufnr)
 				if client:supports_method("textDocument/formatting") then
 					local group = vim.api.nvim_create_augroup("NullLsFormatting", { clear = true })
@@ -43,7 +57,6 @@ return {
 						group = group,
 						buffer = bufnr,
 						callback = function()
-							-- Apenas formatar buffers com nome e tipo válido
 							if vim.fn.bufname(bufnr) ~= "" and vim.bo[bufnr].buftype == "" then
 								vim.lsp.buf.format({ bufnr = bufnr, async = false })
 							end
@@ -53,7 +66,7 @@ return {
 			end,
 		})
 
-		-- Mapeamento para formatação manual
+		-- ✅ Formatador manual
 		vim.keymap.set("n", "<leader>gl", function()
 			if vim.fn.bufname() ~= "" and vim.bo.buftype == "" then
 				vim.lsp.buf.format({ async = false })
@@ -62,7 +75,7 @@ return {
 			end
 		end, { desc = "Formatar arquivo" })
 
-		-- Mapeamento para correções do eslint_d
+		-- ✅ Correções automáticas ESLint
 		vim.keymap.set("n", "<leader>ca", function()
 			if vim.fn.bufname() ~= "" and vim.bo.buftype == "" then
 				vim.lsp.buf.code_action()

@@ -91,7 +91,7 @@ return {
 			})
 
 			-- Configuração do jump-tag
-			vim.keymap.set("n", "<C-d>", ":JumpTagJump<CR>", { desc = "Jump to matching tag" })
+			vim.keymap.set("n", "t<C-d>", ":JumpTagJump<CR>", { desc = "Jump to matching tag" })
 			vim.keymap.set("i", "<C-t>", "<Esc>:JumpTagInsert<CR>a", { desc = "Insert closing tag" })
 			vim.keymap.set("n", "<leader>jt", ":JumpTagJump<CR>", { desc = "Jump to matching tag" })
 			vim.keymap.set("n", "<leader>ct", ":JumpTagInsert<CR>", { desc = "Insert closing tag" })
